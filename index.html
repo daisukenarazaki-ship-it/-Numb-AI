@@ -209,9 +209,41 @@
       position: relative; overflow: hidden;
     }
 
+    /* Generative canvas background (gold particle flow) */
+    .hero-canvas {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      pointer-events: none; z-index: 0;
+    }
+
+    /* Optional real video layer — drop a file in to use it (see #hero-video) */
+    .hero-video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 0; opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+    .hero-video.loaded { opacity: .55; }
+
+    /* Cinematic dark overlay so text stays readable over motion */
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background:
+        radial-gradient(ellipse at 50% 35%, transparent 0%, rgba(5,5,8,.45) 70%, rgba(5,5,8,.85) 100%),
+        linear-gradient(180deg, rgba(5,5,8,.5) 0%, transparent 30%, transparent 60%, var(--bg) 100%);
+    }
+
+    /* keep hero content above the motion layers */
+    #hero > .hero-badge,
+    #hero > .hero-title,
+    #hero > .hero-sub,
+    #hero > .hero-btns,
+    #hero > .scroll-ind { position: relative; z-index: 2; }
+
     .hero-orb {
       position: absolute; border-radius: 50%; pointer-events: none;
-      filter: blur(80px);
+      filter: blur(80px); z-index: 0;
     }
     .hero-orb1 {
       width: min(600px, 120vw); height: min(600px, 120vw);
@@ -669,8 +701,23 @@
 
   <!-- ── HERO ───────────────────────────────────────── -->
   <section id="hero">
+    <!-- Generative motion background (no file needed, instant load) -->
+    <canvas class="hero-canvas" id="hero-canvas"></canvas>
+
+    <!--
+      To use a real mood/image video instead of (or on top of) the canvas:
+      1. Put your file at  assets/hero.mp4
+      2. Uncomment the <video> tag below.
+      <video class="hero-video" id="hero-video" autoplay muted loop playsinline
+             poster="assets/hero-poster.jpg"
+             onloadeddata="this.classList.add('loaded')">
+        <source src="assets/hero.mp4" type="video/mp4" />
+      </video>
+    -->
+
     <div class="hero-orb hero-orb1"></div>
     <div class="hero-orb hero-orb2"></div>
+    <div class="hero-overlay"></div>
 
     <div class="hero-badge">
       <span class="hero-badge-dot"></span>
@@ -1047,6 +1094,103 @@
 
   <!-- ── SCRIPTS ─────────────────────────────────────── -->
   <script>
+    /* ── Hero generative background: flowing gold particle field ── */
+    (function () {
+      const canvas = document.getElementById('hero-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      let w, h, dpr, particles = [], raf, t = 0;
+      const GOLD = '245,200,66';
+
+      function resize() {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        w = canvas.clientWidth;
+        h = canvas.clientHeight;
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        initParticles();
+      }
+
+      function initParticles() {
+        // density scales with screen size but capped for mobile performance
+        const count = Math.min(Math.floor((w * h) / 14000), 110);
+        particles = [];
+        for (let i = 0; i < count; i++) {
+          particles.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            vx: (Math.random() - 0.5) * 0.25,
+            vy: (Math.random() - 0.5) * 0.25,
+            r: Math.random() * 1.6 + 0.4,
+            a: Math.random() * 0.5 + 0.2,
+          });
+        }
+      }
+
+      const LINK = 130;     // distance to draw connecting lines
+      function draw() {
+        t += 0.0015;
+        ctx.clearRect(0, 0, w, h);
+
+        // slow drifting wave influences each particle (organic AI-like flow)
+        for (const p of particles) {
+          p.x += p.vx + Math.cos(p.y * 0.01 + t) * 0.12;
+          p.y += p.vy + Math.sin(p.x * 0.01 + t) * 0.12;
+
+          if (p.x < -20) p.x = w + 20;
+          if (p.x > w + 20) p.x = -20;
+          if (p.y < -20) p.y = h + 20;
+          if (p.y > h + 20) p.y = -20;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(' + GOLD + ',' + p.a + ')';
+          ctx.fill();
+        }
+
+        // connecting lines (constellation effect)
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const a = particles[i], b = particles[j];
+            const dx = a.x - b.x, dy = a.y - b.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < LINK) {
+              const op = (1 - dist / LINK) * 0.16;
+              ctx.strokeStyle = 'rgba(' + GOLD + ',' + op + ')';
+              ctx.lineWidth = 0.6;
+              ctx.beginPath();
+              ctx.moveTo(a.x, a.y);
+              ctx.lineTo(b.x, b.y);
+              ctx.stroke();
+            }
+          }
+        }
+        raf = requestAnimationFrame(draw);
+      }
+
+      resize();
+      window.addEventListener('resize', resize, { passive: true });
+
+      if (reduceMotion) {
+        draw();                       // render one static frame
+        cancelAnimationFrame(raf);
+      } else {
+        draw();
+      }
+
+      // pause animation when hero is off-screen (battery / perf)
+      const heroObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting && !reduceMotion) { if (!raf) draw(); }
+          else { cancelAnimationFrame(raf); raf = null; }
+        });
+      }, { threshold: 0 });
+      heroObs.observe(document.getElementById('hero'));
+    })();
+
     /* ── Nav sticky ── */
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {

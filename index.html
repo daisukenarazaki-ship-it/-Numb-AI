@@ -223,15 +223,15 @@
       pointer-events: none; z-index: 1;
     }
 
-    /* Optional real video layer — drop a file in to use it (see #hero-video) */
+    /* Real video layer — sits above the shader, below particles/overlay */
     .hero-video {
       position: absolute; inset: 0;
       width: 100%; height: 100%;
       object-fit: cover;
-      z-index: 0; opacity: 0;
-      transition: opacity 1.2s ease;
+      z-index: 1; opacity: 0;
+      transition: opacity 1.4s ease;
     }
-    .hero-video.loaded { opacity: .55; }
+    .hero-video.loaded { opacity: .78; }
 
     /* Cinematic dark overlay so text stays readable over motion */
     .hero-overlay {
@@ -768,19 +768,15 @@
     <!-- WebGL flowing liquid gradient (renders behind everything) -->
     <canvas class="hero-shader" id="hero-shader"></canvas>
 
-    <!-- Generative motion background (no file needed, instant load) -->
-    <canvas class="hero-canvas" id="hero-canvas"></canvas>
+    <!-- Real AI-generated mood video (sample). Swap assets/hero.mp4 for the real one. -->
+    <video class="hero-video" id="hero-video" autoplay muted loop playsinline
+           poster="assets/hero-poster.jpg"
+           onloadeddata="this.classList.add('loaded')">
+      <source src="assets/hero.mp4" type="video/mp4" />
+    </video>
 
-    <!--
-      To use a real mood/image video instead of (or on top of) the canvas:
-      1. Put your file at  assets/hero.mp4
-      2. Uncomment the <video> tag below.
-      <video class="hero-video" id="hero-video" autoplay muted loop playsinline
-             poster="assets/hero-poster.jpg"
-             onloadeddata="this.classList.add('loaded')">
-        <source src="assets/hero.mp4" type="video/mp4" />
-      </video>
-    -->
+    <!-- Generative motion background (also serves as fallback if video is missing) -->
+    <canvas class="hero-canvas" id="hero-canvas"></canvas>
 
     <div class="hero-orb hero-orb1"></div>
     <div class="hero-orb hero-orb2"></div>

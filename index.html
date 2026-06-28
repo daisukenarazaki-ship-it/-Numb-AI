@@ -324,6 +324,29 @@
     }
     .kinetic-char.show { transform: translateY(0); opacity: 1; }
 
+    /* AI typing line — looks like the AI is generating words live */
+    .type-line {
+      display: flex; align-items: baseline; justify-content: center;
+      gap: .12em; min-height: 1.05em;
+      flex-wrap: nowrap;
+    }
+    .type-word {
+      background: linear-gradient(120deg, var(--yellow) 0%, #ff9f43 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      white-space: nowrap;
+    }
+    .type-caret {
+      display: inline-block;
+      width: .06em; height: .92em;
+      background: var(--yellow);
+      border-radius: 2px;
+      transform: translateY(.08em);
+      animation: caretBlink 1s steps(1) infinite;
+      box-shadow: 0 0 12px rgba(245,200,66,.8);
+    }
+    @keyframes caretBlink { 0%,50%{ opacity:1 } 50.01%,100%{ opacity:0 } }
+
     .hero-title {
       margin-bottom: 20px;
       position: relative; z-index: 1;
@@ -766,11 +789,11 @@
 
     <div class="hero-badge">
       <span class="hero-badge-dot"></span>
-      AI-Powered Creative Studio
+      Powered by Generative AI
     </div>
 
-    <h1 class="display hero-title" id="kinetic-title" aria-label="The Future of Creative Production Starts Here.">
-      <!-- JS fills in kinetic chars -->
+    <h1 class="display hero-title" id="kinetic-title" aria-label="The Future of AI Creative Starts Here.">
+      <!-- JS fills in kinetic char lines + AI typing line -->
     </h1>
 
     <p class="hero-sub">
@@ -1452,14 +1475,28 @@
     /* ── Kinetic hero title ── */
     const lines = [
       { text: 'The Future of', accent: false },
-      { text: 'Creative', accent: true },
+      { text: '__TYPE__', accent: true },
       { text: 'Starts Here.', accent: false },
     ];
 
     const titleEl = document.getElementById('kinetic-title');
+    let typeWord = null;
     lines.forEach((line, li) => {
       const lineDiv = document.createElement('div');
       lineDiv.style.display = 'block';
+
+      if (line.text === '__TYPE__') {
+        lineDiv.className = 'type-line';
+        typeWord = document.createElement('span');
+        typeWord.className = 'type-word';
+        const caret = document.createElement('span');
+        caret.className = 'type-caret';
+        lineDiv.appendChild(typeWord);
+        lineDiv.appendChild(caret);
+        titleEl.appendChild(lineDiv);
+        return;
+      }
+
       [...line.text].forEach((ch, ci) => {
         const span = document.createElement('span');
         span.className = 'kinetic-char' + (line.accent ? ' accent' : '');
@@ -1473,6 +1510,25 @@
     setTimeout(() => {
       document.querySelectorAll('.kinetic-char').forEach(c => c.classList.add('show'));
     }, 200);
+
+    // Typewriter loop for the AI-generated middle word
+    if (typeWord) (function typeLoop() {
+      const words = ['Creative', 'AI Video', 'Virtual Models', 'TV Commercials', 'AI Advertising'];
+      let wi = 0, ci = 0, deleting = false;
+      function tick() {
+        const word = words[wi];
+        if (!deleting) {
+          typeWord.textContent = word.slice(0, ++ci);
+          if (ci === word.length) { deleting = true; return setTimeout(tick, 1400); }
+          setTimeout(tick, 80 + Math.random() * 60);
+        } else {
+          typeWord.textContent = word.slice(0, --ci);
+          if (ci === 0) { deleting = false; wi = (wi + 1) % words.length; return setTimeout(tick, 220); }
+          setTimeout(tick, 40);
+        }
+      }
+      setTimeout(tick, 1100);
+    })();
 
     /* ── Fade-up on scroll ── */
     const fuEls = document.querySelectorAll('.fu');

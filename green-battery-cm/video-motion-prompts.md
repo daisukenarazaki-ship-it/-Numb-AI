@@ -11,12 +11,13 @@
 **対応画像：** S1プロンプトで生成した画像
 
 **日本語解説：**
-宇宙から日本列島に向かってカメラがゆっくり降下しながらズームインします。都市の灯りが静かに瞬き、シネマティックで滑らかな動きで始まります。手ブレなし。
+宇宙から日本列島に向かってカメラが非常にゆっくりと降下します。急激なズームは一切なし。都市の灯りが静かに瞬き、全体を通して一定速度の滑らかな動きを保ちます。
 
 ```
-Camera slowly descends from outer space toward Japan,
-gentle zoom in, city lights shimmer softly,
-smooth and cinematic movement, no shake
+Very slow and constant camera drift downward toward Japan from space,
+no zoom, no sudden movement, extremely gradual and smooth descent,
+city lights twinkle gently, stable cinematic motion throughout,
+no acceleration, no cuts, one continuous fluid movement
 ```
 
 **設定目安**

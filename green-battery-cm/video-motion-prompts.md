@@ -10,6 +10,9 @@
 
 **対応画像：** S1プロンプトで生成した画像
 
+**日本語解説：**
+宇宙から日本列島に向かってカメラがゆっくり降下しながらズームインします。都市の灯りが静かに瞬き、シネマティックで滑らかな動きで始まります。手ブレなし。
+
 ```
 Camera slowly descends from outer space toward Japan,
 gentle zoom in, city lights shimmer softly,
@@ -26,6 +29,9 @@ smooth and cinematic movement, no shake
 ## S2-A — 太陽光パネル群（C-02）｜3秒
 
 **対応画像：** S2-Aプロンプトで生成した画像
+
+**日本語解説：**
+カメラが太陽光パネルの広大な畑をゆっくり右方向に横移動します。朝の黄金色の光がパネルに徐々に強まり、柔らかなレンズフレアが現れては消えます。シネマティックなスローモーション感。
 
 ```
 Camera slowly dolly right across the solar panel field,
@@ -44,6 +50,9 @@ soft lens flare appears and fades, cinematic slow motion
 
 **対応画像：** S2-Bプロンプトで生成した画像
 
+**日本語解説：**
+カメラは完全に固定したまま、タービンの羽根が青空をバックにゆっくりと回転します。超スローモーション。静かで雄大な雰囲気を出します。
+
 ```
 Turbine blades rotate slowly against the blue sky,
 ultra slow motion, camera is completely still,
@@ -60,6 +69,9 @@ peaceful and majestic atmosphere
 ## S3 — 系統用蓄電池システム施設（C-04）｜3秒
 
 **対応画像：** S3プロンプトで生成した画像
+
+**日本語解説：**
+地面に近い位置からカメラがゆっくりと上昇（クレーンアップ）します。蓄電池ユニットの緑色LEDが静かに点滅し、奥に向かって延びるユニットの列が少しずつ見えてきます。どっしりとした力強い動き。
 
 ```
 Camera slowly cranes upward from ground level,
@@ -80,6 +92,9 @@ steady and powerful movement
 **※ これはCGエフェクトのみ。静止画ではなくCGツールで別途制作推奨**
 **Runway / Pika の場合はS3画像の上にエフェクトを重ねて使用**
 
+**日本語解説：**
+上から緑色のエネルギー粒子が蓄電池ユニットへ流れ込む充電アニメーションです。回路ラインが順番に光り、エメラルドグリーンの光が脈打つように点灯します。背景は暗め。「電気が溜まっていく」様子をCGで表現します。
+
 ```
 Green energy particles flow into the battery units from above,
 charging animation, glowing circuit lines light up progressively,
@@ -96,6 +111,9 @@ emerald green light pulses, dark background
 ## S4-A — 病院カット（C-07）｜2秒
 
 **対応画像：** S4-Aプロンプトで生成した画像
+
+**日本語解説：**
+カメラが病院の廊下をゆっくり前進します。白い照明が安定して明るく灯り続け、背景で医療スタッフが静かに動いています。「電力が途切れることなく支えている」安心感を滑らかな前進で表現します。
 
 ```
 Camera slowly pushes in through hospital corridor,
@@ -114,6 +132,9 @@ medical staff move calmly in background, smooth dolly forward
 
 **対応画像：** S4-Bプロンプトで生成した画像
 
+**日本語解説：**
+ロボットアームが正確な弧を描きながら滑らかに動き続けます。カメラは生産ラインに沿ってゆっくり横方向にトラッキングします。工業的な照明でドラマチックな雰囲気を出しつつ、機械にわずかなモーションブラーをかけてスピード感を演出します。
+
 ```
 Robotic arms move in precise arcs, smooth and continuous motion,
 camera slowly tracks sideways along the production line,
@@ -131,6 +152,9 @@ dramatic industrial lighting, slight motion blur on machinery
 
 **対応画像：** S4-Cプロンプトで生成した画像
 
+**日本語解説：**
+カメラがゆっくり後退しながら上昇し、住宅街全体が徐々に見えてきます。窓の温かい灯りが安定して輝き続け、夜の澄んだ空気感が漂います。穏やかで安心感のある動きで、生活を守る電力の存在を伝えます。
+
 ```
 Camera gently floats backward and upward revealing more houses,
 warm window lights glow steadily,
@@ -147,6 +171,9 @@ cool night air atmosphere, slow and peaceful movement
 ## S5 — エネルギーネットワーク（C-10）｜5秒
 
 **対応画像：** S5プロンプトで生成した画像
+
+**日本語解説：**
+日本地図の上を緑のエネルギーラインが広がり、西から東へ順番にノード（拠点）が点灯していきます。ラインがエネルギーの流れを示すように脈打ちながら、カメラはゆっくりズームアウト。最後に全てのラインが画面中央に向かって収束し、明るい光の焦点を形成します。CMのクライマックスを飾る最も動きのあるカットです。
 
 ```
 Green energy network lines expand and connect across Japan map,

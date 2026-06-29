@@ -496,6 +496,21 @@
     }
     @media(min-width:600px){ .work-card { min-width: 340px; } }
 
+    /* On phones, stack the works vertically (full width) instead of a
+       horizontal carousel — far more readable, no clipped text. */
+    @media(max-width:600px){
+      .works-scroll {
+        flex-direction: column;
+        overflow-x: visible;
+        scroll-snap-type: none;
+      }
+      .work-card { min-width: 0; width: 100%; }
+      .work-card:first-child .work-thumb,
+      .work-thumb { height: 200px; }
+      .work-body p { white-space: normal; }
+      .scroll-hint { display: none; }
+    }
+
     .work-card:hover { border-color: rgba(245,200,66,.2); transform: translateY(-3px); }
 
     .work-thumb {

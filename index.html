@@ -232,10 +232,15 @@
       transition: opacity 1.4s ease;
     }
     .hero-video.loaded { opacity: .78; }
-    /* On portrait phones a 16:9 clip gets heavily cropped/zoomed by cover,
-       so dial it back and let the shader/particles carry the background. */
+    /* On portrait phones, show the whole 16:9 frame (no zoom-crop) as a
+       centered band; the shader/particles fill the space around it so it
+       blends into the dark background. */
     @media (max-width: 768px) {
-      .hero-video.loaded { opacity: .5; }
+      .hero-video {
+        object-fit: contain;
+        height: auto; top: 50%; transform: translateY(-50%);
+      }
+      .hero-video.loaded { opacity: .7; }
     }
 
     /* Cinematic dark overlay so text stays readable over motion */
@@ -366,7 +371,9 @@
     .hero-sub {
       max-width: 480px; margin: 0 auto 40px;
       font-size: clamp(.95rem, 2.5vw, 1.1rem);
-      color: var(--muted); line-height: 1.7;
+      color: rgba(255,255,255,.92); line-height: 1.7;
+      font-weight: 500;
+      text-shadow: 0 2px 18px rgba(0,0,0,.85), 0 0 4px rgba(0,0,0,.6);
     }
 
     .hero-btns {

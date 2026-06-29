@@ -232,6 +232,11 @@
       transition: opacity 1.4s ease;
     }
     .hero-video.loaded { opacity: .78; }
+    /* On portrait phones a 16:9 clip gets heavily cropped/zoomed by cover,
+       so dial it back and let the shader/particles carry the background. */
+    @media (max-width: 768px) {
+      .hero-video.loaded { opacity: .5; }
+    }
 
     /* Cinematic dark overlay so text stays readable over motion */
     .hero-overlay {

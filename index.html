@@ -521,6 +521,12 @@
     }
     .work-card:hover .work-play-btn { transform: scale(1.1); background: var(--yellow); }
 
+    .work-video { cursor: pointer; }
+    .work-video iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; border: 0;
+    }
+
     .work-body { padding: 18px 20px 22px; }
     .work-cat {
       font-size: .68rem; font-weight: 700;
@@ -910,15 +916,15 @@
 
       <div class="works-scroll">
         <div class="work-card fu">
-          <div class="work-thumb">
+          <div class="work-thumb work-video" data-yt="a2Sm7dl-koY"
+               style="background-image:url('https://img.youtube.com/vi/a2Sm7dl-koY/maxresdefault.jpg'); background-size:cover; background-position:center;">
             <div class="work-overlay"></div>
-            🎬
             <div class="work-play-btn">▶</div>
           </div>
           <div class="work-body">
-            <div class="work-cat">TV CM · AI Video</div>
-            <h3>大手飲料メーカー テレビCM</h3>
-            <p>AIビジュアル全面活用の30秒CMを4週間で完成。認知度前期比150%達成。</p>
+            <div class="work-cat">AI Video · Production</div>
+            <h3>Green Battery</h3>
+            <p>AIを活用して制作したプロモーション映像。企画から映像生成までワンストップで対応。</p>
           </div>
         </div>
 
@@ -1549,6 +1555,19 @@
       });
     }, { threshold: 0.08 });
     fuEls.forEach(el => fuObs.observe(el));
+
+    /* ── Works: click-to-play YouTube embeds ── */
+    document.querySelectorAll('.work-video').forEach(el => {
+      el.addEventListener('click', () => {
+        const id = el.getAttribute('data-yt');
+        if (!id || el.dataset.playing) return;
+        el.dataset.playing = '1';
+        el.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id +
+          '?autoplay=1&rel=0&modestbranding=1&playsinline=1" ' +
+          'title="YouTube video player" allow="autoplay; encrypted-media; fullscreen" ' +
+          'allowfullscreen></iframe>';
+      });
+    });
 
     /* ── Contact form ── */
     function handleSubmit(e) {

@@ -77,15 +77,15 @@ cinematic beauty commercial style, no sudden movements
 **対応画像：** S4プロンプトで生成した画像
 
 **日本語解説：**
-美容液ボトルがゆっくり回転し、ガラスに反射する光が美しく揺れ動きます。製品の高級感を際立たせるプロダクトショットです。
+ボトル自体は完全に静止したまま、ガラスに反射する光だけがゆっくりと滑るように動きます。被写体が動かないため、ドリフト（位置ずれ）が起きにくい演出です。
 
 ```
-Bottle stays perfectly fixed in the same position on the table, base does not move or slide,
-bottle continuously rotates in place in one direction on its own vertical axis, full single rotation,
-never reverses direction, never rotates back, never shifts position, never tilts,
-studio light reflects and glides smoothly across the glass surface as it turns,
+Bottle remains completely motionless and static, no rotation, no movement of the bottle at all,
+bottle position is frozen and locked in place,
+only the studio light source slowly moves and glides across the glass surface,
+light reflections and highlights slowly shift and shimmer on the glass,
 elegant and premium product showcase motion,
-very slow and constant one-way rotation, no camera movement,
+no camera movement, no subject movement, only light movement,
 luxury cosmetic advertisement style
 ```
 

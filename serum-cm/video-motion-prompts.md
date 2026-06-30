@@ -80,10 +80,11 @@ cinematic beauty commercial style, no sudden movements
 美容液ボトルがゆっくり回転し、ガラスに反射する光が美しく揺れ動きます。製品の高級感を際立たせるプロダクトショットです。
 
 ```
-Bottle slowly rotates on its axis,
-studio light reflects and glides smoothly across the glass surface,
+Bottle continuously rotates in one direction on its axis, full single rotation,
+never reverses direction, never rotates back,
+studio light reflects and glides smoothly across the glass surface as it turns,
 elegant and premium product showcase motion,
-very slow and controlled rotation, no camera movement,
+very slow and constant one-way rotation, no camera movement,
 luxury cosmetic advertisement style
 ```
 

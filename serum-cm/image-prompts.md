@@ -10,13 +10,14 @@
 **シーン概要：** 暗闇の中、一滴の美容液がゆっくり落ちる瞬間
 
 ```
-Macro photography of a single drop of clear translucent serum falling in slow motion,
+Macro photography of a single drop of clear translucent serum suspended in mid-air,
+just above a calm liquid surface, not yet touching the surface,
 dark elegant background, soft white and subtle gold light reflecting on the liquid droplet,
-crystal clear and transparent liquid texture, gentle ripple effect on surface,
+crystal clear and transparent liquid texture, calm undisturbed surface below,
 luxury cosmetic product photography, ultra photorealistic,
 shallow depth of field, soft clean bokeh,
 high-end beauty commercial style, 8K, no text,
-avoid: amber color, honey color, yellow tint, oily texture, opaque liquid
+avoid: amber color, honey color, yellow tint, oily texture, opaque liquid, droplet touching surface, ripple already formed
 ```
 
 ---

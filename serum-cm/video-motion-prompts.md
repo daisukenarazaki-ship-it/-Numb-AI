@@ -12,10 +12,11 @@
 一滴の美容液がゆっくり落下し、表面に触れた瞬間に波紋が広がります。超スローモーションで、液体の質感と輝きを丁寧に見せます。
 
 ```
-Droplet falls slowly and gently touches the surface,
-ripple spreads outward in ultra slow motion,
+The suspended droplet slowly falls downward due to gravity,
+droplet descends gently and gradually toward the surface below,
+droplet gently touches the surface and ripple spreads outward in ultra slow motion,
 golden light reflects and shimmers on the liquid,
-extremely smooth and elegant motion, no camera movement,
+extremely smooth and elegant falling motion, no camera movement,
 luxury cosmetic commercial style
 ```
 

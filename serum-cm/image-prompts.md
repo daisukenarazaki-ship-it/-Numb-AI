@@ -27,8 +27,8 @@ avoid: amber color, honey color, yellow tint, oily texture, opaque liquid, dropl
 **シーン概要：** 美容液が肌に浸透していくマクロ撮影
 
 ```
-Macro close-up of skin texture with a visible pool of clear serum freshly applied,
-serum still sitting on top of the skin, not yet absorbed, liquid clearly spreading outward,
+Macro close-up of a woman's cheek skin texture with a visible pool of clear serum freshly applied,
+serum still sitting on top of the facial skin, not yet absorbed, liquid clearly spreading outward,
 glowing radiant skin underneath, soft natural light,
 luxury skincare commercial photography, ultra photorealistic,
 delicate skin texture, golden hour lighting, elegant and clean,

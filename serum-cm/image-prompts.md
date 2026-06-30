@@ -27,11 +27,13 @@ avoid: amber color, honey color, yellow tint, oily texture, opaque liquid, dropl
 **シーン概要：** 美容液が肌に浸透していくマクロ撮影
 
 ```
-Macro close-up of skin texture with serum being absorbed,
-glowing radiant skin, dewy moisture effect, soft natural light,
+Macro close-up of skin texture with a visible pool of clear serum freshly applied,
+serum still sitting on top of the skin, not yet absorbed, liquid clearly spreading outward,
+glowing radiant skin underneath, soft natural light,
 luxury skincare commercial photography, ultra photorealistic,
 delicate skin texture, golden hour lighting, elegant and clean,
-8K, no text, beauty advertisement quality
+8K, no text, beauty advertisement quality,
+avoid: serum fully absorbed, dry skin, no visible liquid
 ```
 
 ---

@@ -35,10 +35,11 @@ luxury cosmetic commercial style
 肌の表面に美容液がじんわりと浸透し、潤いとツヤが生まれていきます。カメラがゆっくり肌に寄っていくことで、効果の実感を視覚的に伝えます。
 
 ```
-Camera slowly pushes in toward the glowing skin,
-serum gently absorbs into the skin surface,
-moisture and radiance gradually increase,
-soft natural light shifts subtly, smooth and elegant motion,
+The pooled serum visibly spreads and flows outward across the skin surface,
+liquid gradually thins and sinks into the skin, slowly absorbing,
+camera slowly pushes in toward the glowing skin during the spreading motion,
+moisture and radiance gradually increase as the serum disappears into the skin,
+soft natural light shifts subtly, smooth and elegant spreading motion,
 no sudden movement, beauty commercial style
 ```
 

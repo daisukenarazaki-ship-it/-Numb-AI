@@ -10,11 +10,13 @@
 **シーン概要：** 暗闇の中、一滴の美容液がゆっくり落ちる瞬間
 
 ```
-Macro photography of a single drop of serum falling in slow motion,
-dark elegant background, golden light reflecting on the liquid droplet,
-ripple effect on surface, luxury cosmetic product photography,
-ultra photorealistic, shallow depth of field, soft golden bokeh,
-high-end beauty commercial style, 8K, no text
+Macro photography of a single drop of clear translucent serum falling in slow motion,
+dark elegant background, soft white and subtle gold light reflecting on the liquid droplet,
+crystal clear and transparent liquid texture, gentle ripple effect on surface,
+luxury cosmetic product photography, ultra photorealistic,
+shallow depth of field, soft clean bokeh,
+high-end beauty commercial style, 8K, no text,
+avoid: amber color, honey color, yellow tint, oily texture, opaque liquid
 ```
 
 ---

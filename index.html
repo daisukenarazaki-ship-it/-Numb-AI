@@ -477,36 +477,25 @@
     }
 
     .works-scroll {
-      display: flex; gap: 14px;
-      overflow-x: auto; scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none; padding-bottom: 4px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
-    .works-scroll::-webkit-scrollbar { display: none; }
 
     .work-card {
-      min-width: 280px;
-      flex-shrink: 0;
       border-radius: var(--r);
       overflow: hidden;
       background: var(--bg3);
       border: 1px solid var(--border);
-      scroll-snap-align: start;
       transition: border-color .3s, transform .3s;
     }
-    @media(min-width:600px){ .work-card { min-width: 340px; } }
 
-    /* On phones, stack the works vertically (full width) instead of a
-       horizontal carousel — far more readable, no clipped text. */
     @media(max-width:600px){
       .works-scroll {
-        flex-direction: column;
-        overflow-x: visible;
-        scroll-snap-type: none;
+        grid-template-columns: 1fr;
+        gap: 16px;
       }
-      .work-card { min-width: 0; width: 100%; }
-      .work-card:first-child .work-thumb,
-      .work-thumb { height: 200px; }
+      .work-thumb { height: 200px !important; }
       .work-body p { white-space: normal; }
       .scroll-hint { display: none; }
     }

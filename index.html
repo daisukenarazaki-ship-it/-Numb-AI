@@ -1113,24 +1113,24 @@
           </div>
         </div>
 
-        <form class="form fu" onsubmit="handleSubmit(event)" novalidate>
+        <form class="form fu" action="https://formspree.io/f/meebddlb" method="POST">
           <div class="form-row">
             <div class="fg">
               <label>お名前 *</label>
-              <input type="text" placeholder="山田 太郎" required autocomplete="name" />
+              <input type="text" name="name" placeholder="山田 太郎" required autocomplete="name" />
             </div>
             <div class="fg">
               <label>会社名</label>
-              <input type="text" placeholder="株式会社〇〇" autocomplete="organization" />
+              <input type="text" name="company" placeholder="株式会社〇〇" autocomplete="organization" />
             </div>
           </div>
           <div class="fg">
             <label>メールアドレス *</label>
-            <input type="email" placeholder="example@company.co.jp" required autocomplete="email" />
+            <input type="email" name="email" placeholder="example@company.co.jp" required autocomplete="email" />
           </div>
           <div class="fg">
             <label>ご相談内容</label>
-            <select>
+            <select name="service">
               <option value="">選択してください</option>
               <option>AI動画制作</option>
               <option>AIモデル制作</option>
@@ -1141,7 +1141,7 @@
           </div>
           <div class="fg">
             <label>メッセージ *</label>
-            <textarea placeholder="ご相談内容をお聞かせください..." required></textarea>
+            <textarea name="message" placeholder="ご相談内容をお聞かせください..." required></textarea>
           </div>
           <button type="submit" class="form-submit">送信する →</button>
         </form>

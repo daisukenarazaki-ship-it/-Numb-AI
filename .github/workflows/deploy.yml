@@ -30,6 +30,8 @@ jobs:
           cp index.html _site/index.html
           # include static assets (hero video, poster, etc.)
           if [ -d assets ]; then cp -r assets _site/assets; fi
+          # include custom domain
+          if [ -f CNAME ]; then cp CNAME _site/CNAME; fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

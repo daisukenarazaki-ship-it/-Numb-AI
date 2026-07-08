@@ -913,9 +913,8 @@
     <canvas class="hero-shader" id="hero-shader"></canvas>
 
     <!-- Real AI-generated mood video (sample). Swap assets/hero.mp4 for the real one. -->
-    <video class="hero-video" id="hero-video" autoplay muted loop playsinline
-           poster="assets/hero-poster.jpg"
-           onloadeddata="this.classList.add('loaded')">
+    <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="auto"
+           poster="assets/hero-poster.jpg">
       <source src="assets/hero.mp4" type="video/mp4" />
     </video>
 
@@ -1720,6 +1719,22 @@
       });
     }, { threshold: 0.08 });
     fuEls.forEach(el => fuObs.observe(el));
+
+    /* ── Hero video: robust autoplay ── */
+    (function() {
+      const vid = document.getElementById('hero-video');
+      if (!vid) return;
+      function markLoaded() { vid.classList.add('loaded'); }
+      vid.addEventListener('loadeddata', markLoaded);
+      vid.addEventListener('canplay', markLoaded);
+      const p = vid.play();
+      if (p !== undefined) {
+        p.then(markLoaded).catch(() => {
+          /* autoplay blocked — show poster by adding loaded class anyway */
+          vid.classList.add('loaded');
+        });
+      }
+    })();
 
     /* ── Works: click-to-play YouTube embeds ── */
     document.querySelectorAll('.work-video').forEach(el => {

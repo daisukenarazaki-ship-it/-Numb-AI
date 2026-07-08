@@ -251,6 +251,24 @@
         linear-gradient(180deg, rgba(5,5,8,.5) 0%, transparent 30%, transparent 60%, var(--bg) 100%);
     }
 
+    /* Hero video play button (shown when autoplay is blocked) */
+    .hero-play-btn {
+      display: none;
+      position: absolute; z-index: 4;
+      bottom: 32px; right: 32px;
+      width: 56px; height: 56px;
+      background: rgba(245,200,66,.18);
+      border: 1.5px solid rgba(245,200,66,.5);
+      border-radius: 50%;
+      cursor: pointer;
+      align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      backdrop-filter: blur(8px);
+      transition: background .2s, transform .15s;
+    }
+    .hero-play-btn.visible { display: flex; }
+    .hero-play-btn:hover { background: rgba(245,200,66,.32); transform: scale(1.08); }
+
     /* keep hero content above the motion layers */
     #hero > .hero-badge,
     #hero > .hero-title,
@@ -812,6 +830,7 @@
     <div class="hero-orb hero-orb2"></div>
     <div class="hero-orb hero-orb3"></div>
     <div class="hero-overlay"></div>
+    <button class="hero-play-btn" id="hero-play-btn" aria-label="動画を再生">▶</button>
 
     <div class="hero-badge">
       <span class="hero-badge-dot"></span>
@@ -1571,6 +1590,43 @@
       });
     }, { threshold: 0.08 });
     fuEls.forEach(el => fuObs.observe(el));
+
+    /* ── Hero video: robust autoplay with tap-to-play fallback ── */
+    (function() {
+      const vid = document.getElementById('hero-video');
+      const btn = document.getElementById('hero-play-btn');
+      if (!vid) return;
+
+      function startPlaying() {
+        vid.classList.add('loaded');
+        if (btn) btn.classList.remove('visible');
+      }
+      function showPlayBtn() {
+        vid.classList.add('loaded'); /* show poster */
+        if (btn) btn.classList.add('visible');
+      }
+
+      vid.addEventListener('loadeddata', () => {
+        const p = vid.play();
+        if (p !== undefined) {
+          p.then(startPlaying).catch(showPlayBtn);
+        } else {
+          startPlaying();
+        }
+      });
+
+      vid.addEventListener('canplay', () => {
+        if (!vid.paused) startPlaying();
+      });
+
+      /* tap-to-play button */
+      if (btn) {
+        btn.addEventListener('click', () => {
+          vid.play().then(startPlaying).catch(() => {});
+        });
+      }
+    })();
+
 
     /* ── Works: click-to-play YouTube embeds ── */
     document.querySelectorAll('.work-video').forEach(el => {

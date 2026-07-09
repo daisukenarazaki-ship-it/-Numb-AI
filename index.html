@@ -799,6 +799,29 @@
     .form-submit:hover { background: var(--yellow2); box-shadow: 0 0 56px rgba(245,200,66,.5); }
     .form-submit:active { transform: scale(.98); }
 
+    /* ── COMPANY ────────────────────────────────────────── */
+    .company-table { border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
+    .company-row {
+      display: grid; grid-template-columns: 140px 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+    .company-row:last-child { border-bottom: none; }
+    .company-th {
+      padding: 18px 24px;
+      background: var(--glass-bg);
+      font-size: .85rem; font-weight: 600; color: var(--yellow);
+      border-right: 1px solid var(--border);
+    }
+    .company-td {
+      padding: 18px 24px;
+      font-size: .9rem; color: var(--muted); line-height: 1.6;
+    }
+    @media(max-width:600px){
+      .company-row { grid-template-columns: 1fr; }
+      .company-th { border-right: none; border-bottom: 1px solid var(--border); padding: 12px 16px; }
+      .company-td { padding: 12px 16px; }
+    }
+
     /* ── FAQ ───────────────────────────────────────────── */
     .faq-list { display: flex; flex-direction: column; gap: 12px; }
     .faq-item {
@@ -902,6 +925,7 @@
       <li><a href="#works">Works</a></li>
       <li><a href="#why">About</a></li>
       <li><a href="#process">Process</a></li>
+      <li><a href="#company">Company</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
@@ -1218,6 +1242,40 @@
           <div class="step-n">04</div>
           <h4>納品・サポート</h4>
           <p>最終データを納品。放映サポートや運用改善も継続的にご提供します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMPANY ──────────────────────────────────────── -->
+  <section id="company" class="section">
+    <div class="wrap">
+      <span class="label fu">Company</span>
+      <h2 class="h2 fu" style="margin-bottom:40px;">会社概要</h2>
+      <div class="company-table fu">
+        <div class="company-row">
+          <div class="company-th">会社名</div>
+          <div class="company-td">株式会社Banana Technology</div>
+        </div>
+        <div class="company-row">
+          <div class="company-th">代表取締役</div>
+          <div class="company-td">調 哲明</div>
+        </div>
+        <div class="company-row">
+          <div class="company-th">所在地</div>
+          <div class="company-td">東京都中央区佃2-14-8 トレゾールカシェ3階</div>
+        </div>
+        <div class="company-row">
+          <div class="company-th">資本金</div>
+          <div class="company-td">1,000,000円</div>
+        </div>
+        <div class="company-row">
+          <div class="company-th">事業内容</div>
+          <div class="company-td">AI動画制作・テレビCM制作・AIモデル制作・デジタル広告制作</div>
+        </div>
+        <div class="company-row">
+          <div class="company-th">メール</div>
+          <div class="company-td">info@bana-te.com</div>
         </div>
       </div>
     </div>

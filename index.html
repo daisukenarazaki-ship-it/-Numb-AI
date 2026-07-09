@@ -236,11 +236,11 @@
       display: flex; align-items: center; gap: 10px; text-decoration: none;
     }
     .logo-mark {
-      width: 36px; height: 36px; border-radius: 8px;
+      width: 36px; height: 36px;
       display: flex; align-items: center; justify-content: center;
-      overflow: hidden; flex-shrink: 0;
+      flex-shrink: 0;
     }
-    .logo-mark img { width: 100%; height: 100%; object-fit: contain; }
+    .logo-mark img { width: 100%; height: 100%; object-fit: contain; display: block; }
     .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
     .logo-name { font-size: .85rem; font-weight: 800; letter-spacing: .04em; color: var(--fg); }
     .logo-sub  { font-size: .6rem;  font-weight: 500; letter-spacing: .06em; color: var(--yellow); opacity: .9; }
@@ -930,7 +930,7 @@
       <li><a href="#works">Works</a></li>
       <li><a href="#why">About</a></li>
       <li><a href="#process">Process</a></li>
-      <li><a href="#company">Company</a></li>
+      <li><a href="#contact">Company</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
@@ -1252,39 +1252,6 @@
     </div>
   </section>
 
-  <!-- ── COMPANY ──────────────────────────────────────── -->
-  <section id="company" class="section">
-    <div class="wrap">
-      <span class="label fu">Company</span>
-      <h2 class="h2 fu" style="margin-bottom:40px;">会社概要</h2>
-      <div class="company-table fu">
-        <div class="company-row">
-          <div class="company-th">会社名</div>
-          <div class="company-td">株式会社Banana Technology</div>
-        </div>
-        <div class="company-row">
-          <div class="company-th">代表取締役</div>
-          <div class="company-td">調 哲明</div>
-        </div>
-        <div class="company-row">
-          <div class="company-th">所在地</div>
-          <div class="company-td">東京都中央区佃2-14-8 トレゾールカシェ3階</div>
-        </div>
-        <div class="company-row">
-          <div class="company-th">資本金</div>
-          <div class="company-td">1,000,000円</div>
-        </div>
-        <div class="company-row">
-          <div class="company-th">事業内容</div>
-          <div class="company-td">AI動画制作・テレビCM制作・AIモデル制作・デジタル広告制作</div>
-        </div>
-        <div class="company-row">
-          <div class="company-th">メール</div>
-          <div class="company-td">info@bana-te.com</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ── FAQ ───────────────────────────────────────────── -->
   <section id="faq" class="section" style="background: var(--bg2);">
@@ -1336,12 +1303,8 @@
             <span>info@bana-te.com</span>
           </div>
           <div class="contact-detail fu">
-            <div class="c-ico">📞</div>
-            <span>03-XXXX-XXXX（平日 10:00〜18:00）</span>
-          </div>
-          <div class="contact-detail fu">
             <div class="c-ico">📍</div>
-            <span>東京都渋谷区</span>
+            <span>東京都中央区佃2-14-8 トレゾールカシェ3階</span>
           </div>
         </div>
 
@@ -1377,6 +1340,34 @@
           </div>
           <button type="submit" class="form-submit">送信する →</button>
         </form>
+      </div>
+
+      <!-- 会社概要 -->
+      <div class="company-table fu" style="margin-top:64px;">
+        <div class="company-row">
+          <div class="company-th">会社名</div>
+          <div class="company-td">株式会社Banana Technology</div>
+        </div>
+        <div class="company-row">
+          <div class="company-th">代表取締役</div>
+          <div class="company-td">調 哲明</div>
+        </div>
+        <div class="company-row">
+          <div class="company-th">所在地</div>
+          <div class="company-td">東京都中央区佃2-14-8 トレゾールカシェ3階</div>
+        </div>
+        <div class="company-row">
+          <div class="company-th">資本金</div>
+          <div class="company-td">1,000,000円</div>
+        </div>
+        <div class="company-row">
+          <div class="company-th">事業内容</div>
+          <div class="company-td">AI動画制作・テレビCM制作・AIモデル制作・デジタル広告制作</div>
+        </div>
+        <div class="company-row">
+          <div class="company-th">メール</div>
+          <div class="company-td">info@bana-te.com</div>
+        </div>
       </div>
     </div>
   </section>

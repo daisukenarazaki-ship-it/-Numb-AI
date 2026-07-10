@@ -134,11 +134,51 @@ Silhouette of a small child standing against a beautiful natural rising sun over
 
 ---
 
+# 案D｜IMPACT（宣言・畳みかけ／正面突破）
+
+**施設記述ブロック（D・カット1/3にコピー）:**
+`a row of modern grid-scale battery storage units, clean white containers with bright green accent panels, beside a large solar panel field, in Japan`
+
+> 案Dは"動"。ダーク基調＋電気的な緑の発光、ローアングルやスナップズームなど強い画作り。和太鼓のビートでカットを切る。**数値・実績は入れない**（"at the scale of a nation" 等の断定的な規模主張も避け、映像のスケールで見せる）。
+
+### 画像D1｜見上げる施設＋朝日＋緑の脈動
+```
+Dramatic low-angle shot looking up at a row of modern grid-scale battery storage units, clean white containers with bright green accent panels, glowing green energy pulsing along their seams, a bold rising sun behind them, deep dramatic dawn sky, powerful heroic mood, no readable text, no logos, no flags, cinematic, photoreal, ultra realistic, natural lighting, epic scale, 4k
+```
+### 画像D2｜送電網を走る緑のエネルギー
+```
+High-voltage transmission towers and power lines at night, a bright green surge of energy racing along the lines and lighting them up, motion streaks, sparks of light, dark dramatic sky, high energy and speed, no readable text, no logos, no flags, cinematic, photoreal, ultra realistic, natural lighting, epic scale, 4k
+```
+### 画像D3｜広大な蓄電池アレイ（空撮）
+```
+Epic aerial wide shot of a vast array of modern grid-scale battery storage units with bright green accent panels, endless neat rows beside a huge solar farm, morning light, overwhelming sense of scale, no readable text, no logos, no flags, cinematic, photoreal, ultra realistic, natural lighting, epic scale, 4k
+```
+### 画像D4｜都市が一斉に灯る
+```
+A large city skyline at night seen from a distance, a wave of warm and green light sweeping across the buildings as they light up all at once, energetic hopeful surge, dark sky, no readable text, no logos, no flags, cinematic, photoreal, ultra realistic, natural lighting, epic scale, 4k
+```
+### 画像D5｜ブランド提示（編集）
+AI生成不要。ダーク背景に緑のエネルギーバー＋「GREEN BATTERY」を大きく編集で合成。
+### 画像D6｜エンドカード（編集）
+AI生成不要。ロゴ＋「A Japanese grid-scale energy storage company」＋タグラインを編集で合成。
+
+### Kling（カメラ指定込み・キネティック）
+1. D1 → `fast dramatic push-in from a low angle as the green energy pulses brighter along the containers, cinematic, photoreal, no text`
+2. D2 → `fast tracking shot following the green energy surge racing along the power lines, cinematic, photoreal, no text`
+3. D3 → `sweeping aerial pull-back revealing the full scale of the battery array, cinematic, photoreal, no text`
+4. D4 → `quick punch-in as the wave of light sweeps across the city skyline and it lights up, cinematic, photoreal, no text`
+5. D5 → 編集（タイポ・インパクト）。
+6. D6 → 編集（静止）。
+> ※ D案は疾走感が命なので、末尾は他案の `slow motion` を外し `cinematic, photoreal, no text` とする。
+
+---
+
 ## テロップ（編集で合成・ローマ字＋英訳併記）
 - 案A カット2: `勿体無い ／ MOTTAINAI — waste nothing`
 - 案A カット3 ／ 全案の施設カット: `GRID-SCALE ENERGY STORAGE`
 - 案B カット2: `調和 ／ HARMONY — balance`
 - 案C カット2: `匠 ／ CRAFTED IN JAPAN`
+- 案D カット1: `日本発 ／ FROM JAPAN` ／ カット3: `系統用蓄電池 ／ GRID-SCALE STORAGE` ／ カット6: `A Japanese grid-scale energy storage company`
 
 ## 展開フォーマット（同一素材から書き出し）
 16:9 15秒（Netflix本編）／ 9:16・1:1 15秒（SNS・商談）／ 6秒バンパー ／ 30–60秒 拡張版（投資家・M&A用・末尾に Partner with us）。

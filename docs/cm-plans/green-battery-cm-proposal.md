@@ -1,3 +1,7 @@
+> ⚠️ **この文書は旧版（4カット・初期3案）です。最新は rev.2 を参照：**
+> - 提案書（絵コンテ・カメラ指定・展開設計）: `docs/cm-plans/green-battery-proposal.html`
+> - 制作プロンプト: `docs/cm-plans/green-battery-production.md`
+
 # 株式会社Green Battery 様
 # 米国Netflix 15秒CM ご提案（3案）
 

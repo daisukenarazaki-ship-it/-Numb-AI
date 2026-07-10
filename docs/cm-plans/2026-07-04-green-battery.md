@@ -1,3 +1,7 @@
+> ⚠️ **この文書は旧版（4カット・初期案）です。最新は rev.2 を参照：**
+> - 提案書（絵コンテ）: `docs/cm-plans/green-battery-proposal.html`
+> - 制作プロンプト: `docs/cm-plans/green-battery-production.md`
+
 # 【CM台本＋制作指示】株式会社Green Battery — 米国Netflix 15秒 ブランドムービー（日本発を前面に）
 生成日: 2026-07-04 ／ クライアント案件（プロ制作・クオリティ重視）
 

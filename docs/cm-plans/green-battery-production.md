@@ -134,42 +134,42 @@ Silhouette of a small child standing against a beautiful natural rising sun over
 
 ---
 
-# 案D｜IMPACT（宣言・畳みかけ／正面突破）
+# 案D｜THIS IS JAPAN（これぞ日本／アイコン尽くしのモンタージュ）
 
-**施設記述ブロック（D・カット1/3にコピー）:**
-`a row of modern grid-scale battery storage units, clean white containers with bright green accent panels, beside a large solar panel field, in Japan`
+> 主役は「日本の企業であること」。富士・桜・歌舞伎・京都の鳥居・川と朱の橋など、**米国人が連想する"日本"を畳みかける祝祭的モンタージュ**。系統用蓄電池は終盤に1カットだけ、"日本のエネルギー企業だ"と軽く伝わればよい。和楽器（三味線・太鼓・琴）で高揚。
+> **施設記述ブロック（D・カット5にコピー）:** `a row of modern grid-scale battery storage units, clean white containers with green accent panels, beside a solar panel field, set in a serene Japanese landscape with a distant snow-capped Mt. Fuji`
 
-> 案Dは"動"。ダーク基調＋電気的な緑の発光、ローアングルやスナップズームなど強い画作り。和太鼓のビートでカットを切る。**数値・実績は入れない**（"at the scale of a nation" 等の断定的な規模主張も避け、映像のスケールで見せる）。
-
-### 画像D1｜見上げる施設＋朝日＋緑の脈動
+### 画像D1｜富士山と満開の桜
 ```
-Dramatic low-angle shot looking up at a row of modern grid-scale battery storage units, clean white containers with bright green accent panels, glowing green energy pulsing along their seams, a bold rising sun behind them, deep dramatic dawn sky, powerful heroic mood, no readable text, no logos, no flags, cinematic, photoreal, ultra realistic, natural lighting, epic scale, 4k
+A breathtaking view of snow-capped Mt. Fuji in spring, full bloom cherry blossom branches in the foreground, bright clear morning light, vivid and celebratory, iconic timeless Japan, epic cinematic wide shot, natural light, no readable text, no logos, no flags, cinematic, photoreal, ultra realistic, natural lighting, epic scale, 4k
 ```
-### 画像D2｜送電網を走る緑のエネルギー
+### 画像D2｜歌舞伎役者の見得
 ```
-High-voltage transmission towers and power lines at night, a bright green surge of energy racing along the lines and lighting them up, motion streaks, sparks of light, dark dramatic sky, high energy and speed, no readable text, no logos, no flags, cinematic, photoreal, ultra realistic, natural lighting, epic scale, 4k
+A dramatic kabuki actor in an elaborate colorful kimono striking a powerful mie pose, bold red and white kumadori face makeup, intense expression, dark theatrical background with a single spotlight, iconic Japanese performing art, no readable text, no logos, no flags, cinematic, photoreal, ultra realistic, natural lighting, epic scale, 4k
 ```
-### 画像D3｜広大な蓄電池アレイ（空撮）
+### 画像D3｜京都・朱の鳥居のトンネル
 ```
-Epic aerial wide shot of a vast array of modern grid-scale battery storage units with bright green accent panels, endless neat rows beside a huge solar farm, morning light, overwhelming sense of scale, no readable text, no logos, no flags, cinematic, photoreal, ultra realistic, natural lighting, epic scale, 4k
+Walking point-of-view through a tunnel of vivid vermilion torii gates at a Kyoto shrine (Fushimi Inari style), warm sunlight streaming through, lush green forest around, receding perspective, iconic Kyoto, no readable text, no logos, no flags, cinematic, photoreal, ultra realistic, natural lighting, epic scale, 4k
 ```
-### 画像D4｜都市が一斉に灯る
+### 画像D4｜川に架かる朱の太鼓橋と桜
 ```
-A large city skyline at night seen from a distance, a wave of warm and green light sweeping across the buildings as they light up all at once, energetic hopeful surge, dark sky, no readable text, no logos, no flags, cinematic, photoreal, ultra realistic, natural lighting, epic scale, 4k
+A traditional Japanese vermilion arched bridge over a calm river, cherry blossom trees on the banks with petals drifting onto the water, soft spring daylight, serene picturesque Japan, no readable text, no logos, no flags, cinematic, photoreal, ultra realistic, natural lighting, epic scale, 4k
 ```
-### 画像D5｜ブランド提示（編集）
-AI生成不要。ダーク背景に緑のエネルギーバー＋「GREEN BATTERY」を大きく編集で合成。
+### 画像D5｜日本の風景にそっと佇む施設（企業を軽く提示）
+```
+A row of modern grid-scale battery storage units, clean white containers with green accent panels, beside a solar panel field, set in a serene Japanese landscape with a distant snow-capped Mt. Fuji, soft daylight, quietly blending into the beautiful scenery, no readable text, no logos, no flags, cinematic, photoreal, ultra realistic, natural lighting, epic scale, 4k
+```
 ### 画像D6｜エンドカード（編集）
-AI生成不要。ロゴ＋「A Japanese grid-scale energy storage company」＋タグラインを編集で合成。
+AI生成不要。淡い和紙背景に日の丸→ロゴ＋「GREEN BATTERY」＋「A Japanese energy company / From Japan」を編集で合成。
 
-### Kling（カメラ指定込み・キネティック）
-1. D1 → `fast dramatic push-in from a low angle as the green energy pulses brighter along the containers, cinematic, photoreal, no text`
-2. D2 → `fast tracking shot following the green energy surge racing along the power lines, cinematic, photoreal, no text`
-3. D3 → `sweeping aerial pull-back revealing the full scale of the battery array, cinematic, photoreal, no text`
-4. D4 → `quick punch-in as the wave of light sweeps across the city skyline and it lights up, cinematic, photoreal, no text`
-5. D5 → 編集（タイポ・インパクト）。
+### Kling（カメラ指定込み）
+1. D1 → `slow cinematic aerial glide toward Mt. Fuji as cherry blossom petals drift, slow motion, cinematic, photoreal, no text`
+2. D2 → `quick snap zoom onto the kabuki actor as he holds the powerful mie pose, cinematic, photoreal, no text`
+3. D3 → `forward dolly walking through the tunnel of torii gates toward the light, cinematic, photoreal, no text`
+4. D4 → `slow side-tracking dolly across the red bridge as petals fall on the river, slow motion, cinematic, photoreal, no text`
+5. D5 → `slow gentle push-in on the storage facility nestled in the landscape with Mt. Fuji behind, slow motion, cinematic, photoreal, no text`
 6. D6 → 編集（静止）。
-> ※ D案は疾走感が命なので、末尾は他案の `slow motion` を外し `cinematic, photoreal, no text` とする。
+> ※ テンポは和楽器のビートに合わせ、前半（D1–D4）は各2〜2.5秒でリズミカルに、D5でひと呼吸置く。
 
 ---
 
@@ -178,7 +178,7 @@ AI生成不要。ロゴ＋「A Japanese grid-scale energy storage company」＋�
 - 案A カット3 ／ 全案の施設カット: `GRID-SCALE ENERGY STORAGE`
 - 案B カット2: `調和 ／ HARMONY — balance`
 - 案C カット2: `匠 ／ CRAFTED IN JAPAN`
-- 案D カット1: `日本発 ／ FROM JAPAN` ／ カット3: `系統用蓄電池 ／ GRID-SCALE STORAGE` ／ カット6: `A Japanese grid-scale energy storage company`
+- 案D カット5: `系統用蓄電池 ／ GRID-SCALE ENERGY STORAGE`（小さく）／ カット6: `A Japanese energy company ・ From Japan`
 
 ## 展開フォーマット（同一素材から書き出し）
 16:9 15秒（Netflix本編）／ 9:16・1:1 15秒（SNS・商談）／ 6秒バンパー ／ 30–60秒 拡張版（投資家・M&A用・末尾に Partner with us）。

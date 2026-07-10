@@ -122,7 +122,53 @@
   .footer-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; align-items:center}
   .disclaimer{margin-top:26px; font-size:.82rem; color:var(--fg-soft); border:1px dashed var(--line-strong); border-radius:6px; padding:14px 18px; max-width:72ch}
 
+  /* sticky nav */
+  .nav{position:sticky; top:0; z-index:30; background:var(--surface); border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:var(--maxw); margin:0 auto; padding:9px 28px; display:flex; gap:4px 16px; flex-wrap:wrap; align-items:center; font-size:.76rem}
+  .nav-brand{font-family:var(--serif); color:var(--fg); font-weight:600; margin-right:auto; letter-spacing:.03em}
+  .nav a{color:var(--fg-soft); text-decoration:none; letter-spacing:.06em; padding:3px 1px; border-bottom:2px solid transparent; white-space:nowrap}
+  .nav a:hover{color:var(--fg)}
+  .nav a.active{color:var(--green-bright); border-bottom-color:var(--green-bright)}
+
+  /* the idea + recommendation */
+  .idea-wrap{display:grid; grid-template-columns:1.25fr 1fr; gap:30px; align-items:start}
+  .idea-lead{font-family:var(--serif); font-size:clamp(1.4rem,3vw,2.1rem); line-height:1.4}
+  .idea-lead .accent{color:var(--green-bright)}
+  .rec{background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:0 8px 8px 0; padding:18px 20px}
+  .rec h4{font-size:.74rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; font-family:var(--sans); font-weight:700}
+  .rec p{font-size:.95rem}
+  .rec p + p{margin-top:8px}
+  .rec b{color:var(--fg)}
+
+  /* why-ai */
+  .why-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:16px}
+  .why-card{background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:16px 18px}
+  .why-card .k{font-family:var(--serif); color:var(--green-bright); font-size:1.02rem; margin-bottom:6px}
+  .why-card p{font-size:.86rem; color:var(--fg-soft)}
+
+  /* per-concept timeline */
+  .tl-cap{display:flex; justify-content:space-between; align-items:baseline; margin-top:18px; font-size:.72rem; color:var(--fg-soft)}
+  .tl-cap b{font-family:var(--serif); color:var(--fg)}
+  .timeline{display:flex; gap:2px; margin:6px 0 2px; height:26px; border-radius:4px; overflow:hidden}
+  .timeline .seg{flex-grow:1; flex-basis:0; display:flex; align-items:center; justify-content:center; font-size:.66rem; font-weight:700; color:var(--fg-soft); background:var(--line); font-variant-numeric:tabular-nums; transition:filter .15s}
+  .timeline .seg:hover{filter:brightness(1.12)}
+  .timeline .seg.store{background:var(--green); color:#fff}
+  .timeline .seg.logo{background:var(--fg); color:var(--bg)}
+
+  /* per-concept sound */
+  .sound{margin-top:14px; font-size:.9rem; color:var(--fg-soft); max-width:64ch}
+  .sound b{font-family:var(--serif); color:var(--green-bright); margin-right:8px}
+
+  /* frame hover */
+  .frame-card{transition:transform .18s ease, box-shadow .18s ease}
+  .frame-card:hover{transform:translateY(-3px); box-shadow:0 12px 28px rgba(0,0,0,.13)}
+  .frame svg{transition:transform .35s ease}
+  .frame-card:hover .frame svg{transform:scale(1.045)}
+  @media (prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth} }
+  @media (prefers-reduced-motion:reduce){ .frame-card:hover{transform:none} .frame-card:hover .frame svg{transform:none} }
+
   @media (max-width:860px){ .board{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:720px){ .idea-wrap{grid-template-columns:1fr} }
   @media (max-width:720px){
     .brief-grid{grid-template-columns:1fr}
     .board{grid-template-columns:1fr}
@@ -135,10 +181,13 @@
   }
   @media print{
     .doc{background:#fff; color:#111; font-size:12px}
-    .frame-card,.brief-grid div,.pick,.disclaimer,.concept{break-inside:avoid}
+    .nav{display:none}
+    header.cover{break-after:page}
+    .frame-card,.brief-grid div,.pick,.disclaimer,.concept,.why-card,.rec{break-inside:avoid}
     section{padding:22px 0}
     .reveal{opacity:1 !important; transform:none !important; animation:none !important}
   }
+  @page{ margin:14mm }
 </style>
 
 <div class="doc">
@@ -176,8 +225,19 @@
     </div>
   </header>
 
+  <!-- ══ NAV ══ -->
+  <nav class="nav"><div class="nav-inner">
+    <span class="nav-brand">Green Battery ・ CM提案</span>
+    <a href="#idea">企画の核</a>
+    <a href="#concepts">4案比較</a>
+    <a href="#ca">A</a><a href="#cb">B</a><a href="#cc">C</a><a href="#cd">D</a>
+    <a href="#whyai">制作の強み</a>
+    <a href="#deliver">展開</a>
+    <a href="#notes">制作方針</a>
+  </div></nav>
+
   <!-- ══ BRIEF ══ -->
-  <section>
+  <section id="brief">
     <div class="wrap">
       <div class="sec-head"><span class="eyebrow">01</span><span class="soft">企画の概要</span></div>
       <h2 class="title">日本発であることを、米国の心に残す。</h2>
@@ -193,10 +253,30 @@
 
   <hr class="rule">
 
-  <!-- ══ COMPARISON ══ -->
-  <section>
+  <!-- ══ THE IDEA ══ -->
+  <section id="idea">
     <div class="wrap">
-      <div class="sec-head"><span class="eyebrow">02</span><span class="soft">3案 早わかり比較</span></div>
+      <div class="sec-head"><span class="eyebrow">02</span><span class="soft">企画の核 ・ The Idea</span></div>
+      <div class="idea-wrap">
+        <div>
+          <p class="idea-lead">日本の美意識で、<span class="accent">「無駄にしない」</span>を世界へ。</p>
+          <p class="brief-note soft" style="margin-top:16px">Green Battery は、捨てられていた再エネを蓄えて活かす会社。その事業を、日本が古くから持つ<b class="serif" style="color:var(--fg)">"もったいない"の精神と美意識</b>に重ねて描きます。米国の視聴者には「日本発の、志ある企業」として心に残し、その信頼が投資家・買収の会話を後押しします。</p>
+        </div>
+        <div class="rec">
+          <h4>私たちの推し</h4>
+          <p>目的が<b>①一般認知の最大化</b>なら、物語で確実に伝わる<b>案A（MOTTAINAI）</b>を第一候補に。</p>
+          <p><b>"これぞ日本"の華やかさ</b>で一気に掴みたいなら<b>案D</b>、投資家・買収の<b>信頼感</b>重視なら<b>案C</b>が効きます。まずは狙いを1つ決めるところから。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ══ COMPARISON ══ -->
+  <section id="concepts">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">03</span><span class="soft">4案 早わかり比較</span></div>
       <h2 class="title">構成から異なる、4つの方向。</h2>
       <div class="cmp-scroll">
       <table class="cmp">
@@ -216,7 +296,7 @@
   </section>
 
   <!-- ══ CONCEPT A ══ -->
-  <section class="concept">
+  <section class="concept" id="ca">
     <div class="wrap">
       <div class="concept-head">
         <div class="concept-num reveal">01</div>
@@ -226,7 +306,17 @@
           <span class="concept-struct">構成：問題 → 解決のドラマ</span>
           <p class="concept-logline">“The energy we throw away could power tomorrow.”</p>
           <p class="concept-why">豊かな太陽の恵み → その一部が<b>捨てられる（喪失）</b> → 蓄電池が受け止める（再生）→ <b>夜、その電力が家の灯りをともす（人のベネフィット）</b>→ 未来へ。喪失と再生のカタルシスで、御社の存在理由を物語として伝える。ラストは「もったいない」の言葉がロゴへ結実。</p>
+          <p class="sound"><b>音</b>静かなピアノ＋ストリングス。喪失の場面で無音の"間"、再生とともに和太鼓が希望的に高鳴る。</p>
         </div>
+      </div>
+      <div class="tl-cap"><b>15秒 ・ 6カット</b><span>緑＝蓄電池が映るカット／濃色＝ロゴ</span></div>
+      <div class="timeline" aria-hidden="true">
+        <span class="seg" style="flex-grow:2" title="Cut1 恵み">1</span>
+        <span class="seg" style="flex-grow:3" title="Cut2 喪失">2</span>
+        <span class="seg store" style="flex-grow:3" title="Cut3 蓄える">3</span>
+        <span class="seg" style="flex-grow:3" title="Cut4 灯り">4</span>
+        <span class="seg" style="flex-grow:2" title="Cut5 夜明け">5</span>
+        <span class="seg logo" style="flex-grow:2" title="Cut6 ロゴ">6</span>
       </div>
       <div class="board">
         <!-- A1 -->
@@ -311,7 +401,7 @@
   </section>
 
   <!-- ══ CONCEPT B ══ -->
-  <section class="concept">
+  <section class="concept" id="cb">
     <div class="wrap">
       <div class="concept-head">
         <div class="concept-num reveal">02</div>
@@ -321,7 +411,17 @@
           <span class="concept-struct">構成：一つの比喩で貫く（貯めて、放つ）</span>
           <p class="concept-logline">“Hold what you have. Release it when it’s needed.”</p>
           <p class="concept-why">日本庭園の<b>「ししおどし」</b>——水を静かに貯め、満ちた時だけ放つ。これは<b>蓄電池そのものの比喩</b>。枯山水の「間」、蹲の一滴、竹林の静けさ——すべて"必要な分だけ"という一つの思想で貫き、施設をその現代の姿として見せる。説明ではなく、静けさで納得させる高級路線。</p>
+          <p class="sound"><b>音</b>尺八・琴と蹲の水音。無音の"間"を大切に、ししおどしの一打をアクセントに。</p>
         </div>
+      </div>
+      <div class="tl-cap"><b>15秒 ・ 6カット</b><span>緑＝蓄電池が映るカット／濃色＝ロゴ</span></div>
+      <div class="timeline" aria-hidden="true">
+        <span class="seg" style="flex-grow:3" title="Cut1 枯山水">1</span>
+        <span class="seg" style="flex-grow:2" title="Cut2 蹲">2</span>
+        <span class="seg" style="flex-grow:3" title="Cut3 ししおどし">3</span>
+        <span class="seg store" style="flex-grow:3" title="Cut4 施設">4</span>
+        <span class="seg" style="flex-grow:2" title="Cut5 灯る町">5</span>
+        <span class="seg logo" style="flex-grow:2" title="Cut6 ロゴ">6</span>
       </div>
       <div class="board">
         <!-- B1 top-down zen -->
@@ -400,7 +500,7 @@
   </section>
 
   <!-- ══ CONCEPT C ══ -->
-  <section class="concept">
+  <section class="concept" id="cc">
     <div class="wrap">
       <div class="concept-head">
         <div class="concept-num reveal">03</div>
@@ -410,7 +510,17 @@
           <span class="concept-struct">構成：世代のリレー（過去 → 未来）</span>
           <p class="concept-logline">“Built to last for generations.”</p>
           <p class="concept-why">何世代も手入れされた棚田 → 職人の手 → <b>老いた手から若い手へ受け継ぐ（継承の核）</b> → その延長に蓄電インフラ → <b>棚田を見つめる子ども（未来の受益者）</b>。「世代を超えて信頼できる会社」を刻む、<b>投資家・買収に最も効く</b>構成。ラストは子どものシルエットで未来を託す。</p>
+          <p class="sound"><b>音</b>琴＋和太鼓の荘厳さ。世代をつなぐ時間の流れを感じさせ、ラストに子どもの環境音。</p>
         </div>
+      </div>
+      <div class="tl-cap"><b>15秒 ・ 6カット</b><span>緑＝蓄電池が映るカット／濃色＝ロゴ</span></div>
+      <div class="timeline" aria-hidden="true">
+        <span class="seg" style="flex-grow:3" title="Cut1 棚田">1</span>
+        <span class="seg" style="flex-grow:2" title="Cut2 職人の手">2</span>
+        <span class="seg" style="flex-grow:3" title="Cut3 受け継ぐ手">3</span>
+        <span class="seg store" style="flex-grow:3" title="Cut4 施設">4</span>
+        <span class="seg" style="flex-grow:2" title="Cut5 子ども">5</span>
+        <span class="seg logo" style="flex-grow:2" title="Cut6 ロゴ">6</span>
       </div>
       <div class="board">
         <!-- C1 terraces + farmer -->
@@ -496,7 +606,7 @@
   </section>
 
   <!-- ══ CONCEPT D ══ -->
-  <section class="concept">
+  <section class="concept" id="cd">
     <div class="wrap">
       <div class="concept-head">
         <div class="concept-num reveal">04</div>
@@ -506,7 +616,17 @@
           <span class="concept-struct">構成：日本アイコン尽くしのモンタージュ（企業色は控えめ）</span>
           <p class="concept-logline">“This is Japan. And this is how we power it.”</p>
           <p class="concept-why">富士山・桜・歌舞伎・京都の鳥居・川と朱の橋——<b>アメリカ人が思い描く"日本"を一気に畳みかける</b>祝祭的モンタージュ。主役はあくまで<b>「日本の企業だ」という誇り</b>。系統用蓄電池は終盤で<b>そっと1カットだけ</b>見せ、"なるほど日本のエネルギー企業か"と軽く伝わればよい、という設計。和楽器（三味線・太鼓・琴）で高揚させる。</p>
+          <p class="sound"><b>音</b>三味線・締太鼓・和太鼓で祝祭的に畳みかけ、歌舞伎の見得でキメの一打。</p>
         </div>
+      </div>
+      <div class="tl-cap"><b>15秒 ・ 6カット</b><span>緑＝蓄電池が映るカット（終盤に1つ）／濃色＝ロゴ</span></div>
+      <div class="timeline" aria-hidden="true">
+        <span class="seg" style="flex-grow:2" title="Cut1 富士・桜">1</span>
+        <span class="seg" style="flex-grow:3" title="Cut2 歌舞伎">2</span>
+        <span class="seg" style="flex-grow:3" title="Cut3 鳥居">3</span>
+        <span class="seg" style="flex-grow:2" title="Cut4 太鼓橋">4</span>
+        <span class="seg store" style="flex-grow:3" title="Cut5 施設">5</span>
+        <span class="seg logo" style="flex-grow:2" title="Cut6 ロゴ">6</span>
       </div>
       <div class="board">
         <!-- D1 Fuji + sakura -->
@@ -597,10 +717,28 @@
 
   <hr class="rule">
 
-  <!-- ══ CAMPAIGN / DELIVERABLES ══ -->
-  <section>
+  <!-- ══ WHY AI ══ -->
+  <section id="whyai">
     <div class="wrap">
-      <div class="sec-head"><span class="eyebrow">03</span><span class="soft">展開設計 ・ Deliverables</span></div>
+      <div class="sec-head"><span class="eyebrow">04</span><span class="soft">制作の強み ・ Why us</span></div>
+      <h2 class="title">実写ロケでは届かない、速さと自由度。</h2>
+      <p class="brief-note soft" style="margin-top:0;margin-bottom:20px">最新のAI映像制作により、従来のCM制作の制約を外します。短期間・低コストで、納得いくまで作り込めます。</p>
+      <div class="why-grid">
+        <div class="why-card"><div class="k">短納期</div><p>撮影・キャスティング・機材が不要。企画から初稿まで数日〜のスピード。</p></div>
+        <div class="why-card"><div class="k">低コスト</div><p>ロケ・スタジオ・出演料が発生せず、同予算で品質と本数に投資できる。</p></div>
+        <div class="why-card"><div class="k">納得まで試せる</div><p>気に入らないカットだけを何度でも再生成。表現の冒険がしやすい。</p></div>
+        <div class="why-card"><div class="k">多展開が容易</div><p>英語版／日本語版、16:9・9:16・6秒など、同じ世界観で横展開。</p></div>
+        <div class="why-card"><div class="k">世界観の一貫性</div><p>顔・施設を"承認済みマスター"で固定し、全カットでブレさせない。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ══ CAMPAIGN / DELIVERABLES ══ -->
+  <section id="deliver">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">05</span><span class="soft">展開設計 ・ Deliverables</span></div>
       <h2 class="title">1本で終わらせず、目的別に届ける。</h2>
       <p class="brief-note soft" style="margin-top:0;margin-bottom:20px">選定した1つのヒーロー素材から、編集で各フォーマットを書き出します。Netflixの認知に加え、SNSのリーチと投資家・買収の商談まで、同じ世界観で一気通貫にカバーします。</p>
       <div class="cmp-scroll">
@@ -622,9 +760,9 @@
   <hr class="rule">
 
   <!-- ══ NOTES ══ -->
-  <section>
+  <section id="notes">
     <div class="wrap">
-      <div class="sec-head"><span class="eyebrow">04</span><span class="soft">制作方針とご確認事項</span></div>
+      <div class="sec-head"><span class="eyebrow">06</span><span class="soft">制作方針とご確認事項</span></div>
       <h2 class="title">安心して米国に出せる形で。</h2>
       <div class="notes-grid">
         <div class="note-block">
@@ -665,3 +803,20 @@
   </footer>
 
 </div>
+
+<script>
+  (function(){
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+    var map = links.map(function(a){ var el=document.getElementById(a.getAttribute('href').slice(1)); return {a:a, el:el}; }).filter(function(m){ return m.el; });
+    if(!('IntersectionObserver' in window) || !map.length) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var id = e.target.id;
+          map.forEach(function(m){ m.a.classList.toggle('active', m.el.id===id); });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    map.forEach(function(m){ io.observe(m.el); });
+  })();
+</script>
